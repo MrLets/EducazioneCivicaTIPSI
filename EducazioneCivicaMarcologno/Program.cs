@@ -9,30 +9,25 @@ class Program
     {
     }
         static string funzioneuno(){
-            
-        Console.WriteLine("Inserisci una stringa:");
-        string s = Console.ReadLine();
-        Console.WriteLine("Inserisci un numero:");
-        int n = int.Parse(Console.ReadLine());
-        string result = "";
-        foreach (char c in s)
+
+        string s = "ciao";
+        int n = 2;
+        char[] arr = s.ToCharArray();
+        for (int i = 0; i < arr.Length; i++)
         {
-            if (char.IsLetter(c))
+            char c = arr[i];
+            c = (char)(c - n);
+            if (c < 'a')
             {
-                char newChar = (char)(c + n);
-                if (char.IsUpper(c) && newChar > 'Z' || char.IsLower(c) && newChar > 'z')
-                {
-                    newChar = (char)(newChar - 26);
-                }
-                result += newChar;
+                c = (char)(c + 26);
             }
-            else
-            {
-                result += c;
-            }
+            arr[i] = c;
         }
-        Console.WriteLine(result);
+        s = new string(arr);
+        Console.WriteLine(s);
+    }
+}
                     
         }
-}
-}
+
+
