@@ -10,15 +10,16 @@ class Program
     }
         static string funzioneuno(){
 
-          string s = "ciao";
+           string s = "ciao";
         int n = 2;
-        int sum = 0;
+        int product = 1;
         foreach (char c in s)
         {
             int value = (int)c - 96;
-            sum += value;
+            product *= value;
         }
-        int result = sum * n;
+        double result = Math.Ceiling((double)product / n);
+        Console.WriteLine(result);
         
     }
 }
